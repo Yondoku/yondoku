@@ -3,7 +3,7 @@ module.exports = {
 	name: 'help',
 	description: 'List all of my commands or info about a specific command.',
 	usage: '[commandName]',
-	execute(message, args) {
+	execute(message, args, Discord) {
     const data = [];
 const { commands } = message.client;
 
