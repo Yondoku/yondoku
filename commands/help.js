@@ -24,7 +24,7 @@ return message.author.send(data, { split: true })
 const name = args[0].toLowerCase();
 const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
 
-if (!command
+if (!command) {
 	return message.reply('That\'s not a command!');
 }
 
@@ -35,10 +35,10 @@ if (command.description) data.push(`Description: ${command.description}`);
 if (command.usage) data.push(`Usage: ${prefix}${command.name} ${command.usage}`);
 
 data.push(`Cooldown: ${command.cooldown || 3} seconds`);
-		
-		
+
+
 const commandEmbed = new Discord.MessageEmbed().setColor('#5d83a2').setAuthor(`${message.author.tag}`, `${message.author.avatarURL()}`).setTitle('Command Help').setDescription(data);
 message.channel.send({ embed: commandEmbed });
 	},
-	
+
 };
