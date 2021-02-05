@@ -1,6 +1,6 @@
 const fs = require('fs');
 const Discord = require('discord.js');
-const { prefix, token } = require('./config.json');
+const { prefix } = require('./config.json');
 const { version } = require('./package.json');
 const client = new Discord.Client();
 const constants = Discord.Constants;
