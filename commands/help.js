@@ -35,7 +35,10 @@ if (command.description) data.push(`Description: ${command.description}`);
 if (command.usage) data.push(`Usage: ${prefix}${command.name} ${command.usage}`);
 
 data.push(`Cooldown: ${command.cooldown || 3} seconds`);
-
-message.channel.send(data, { split: true });
+		
+		
+const helpEmbed = new Discord.MessageEmbed().setColor('#5d83a2').setAuthor(`${message.author.tag}`, `${message.author.avatarURL()}`).setTitle('Command Help').setDescription(data);
+message.channel.send({ embed: helpEmbed });
 	},
+	
 };
