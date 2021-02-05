@@ -9,8 +9,6 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-
-    "discord.js": "^12.2.0",
-  
+    "discord.js": "^12.2.0"
   }
 }
