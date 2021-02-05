@@ -77,4 +77,4 @@ client.on('message', async message => {
 		message.channel.send({ embed: errorEmbed })
 	}
 });
-client.login(token);
+client.login(process.env.bot_token);
