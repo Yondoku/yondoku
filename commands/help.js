@@ -14,7 +14,7 @@ data.push(`\nYou can type \`${prefix}help <command-name>\` to get info on a spec
 return message.author.send(data, { split: true })
 	.then(() => {
 		if (message.channel.type === 'dm') return;
-		message.reply(`I have sent you a DM with my commands! \nYou can type \`${prefix}help <command-name>\` to get info on a specific command.`);
+		const helpEmbed = new Discord.MessageEmbed().setColor('#5d83a2').setAuthor(`${message.author.tag}`, `${message.author.avatarURL()}`).setTitle(`I have sent you a DM with my commands!`).setDescription(`\nYou can type \`${prefix}help <command-name>\` to get info on a specific command.`);
 	})
 	.catch(error => {
 		console.error(`Could not send help DM to ${message.author.tag}.\n`, error);
@@ -24,7 +24,7 @@ return message.author.send(data, { split: true })
 const name = args[0].toLowerCase();
 const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
 
-if (!command) {
+if (!command
 	return message.reply('That\'s not a command!');
 }
 
@@ -37,8 +37,8 @@ if (command.usage) data.push(`Usage: ${prefix}${command.name} ${command.usage}`)
 data.push(`Cooldown: ${command.cooldown || 3} seconds`);
 		
 		
-const helpEmbed = new Discord.MessageEmbed().setColor('#5d83a2').setAuthor(`${message.author.tag}`, `${message.author.avatarURL()}`).setTitle('Command Help').setDescription(data);
-message.channel.send({ embed: helpEmbed });
+const commandEmbed = new Discord.MessageEmbed().setColor('#5d83a2').setAuthor(`${message.author.tag}`, `${message.author.avatarURL()}`).setTitle('Command Help').setDescription(data);
+message.channel.send({ embed: commandEmbed });
 	},
 	
 };
