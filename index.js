@@ -39,13 +39,13 @@ client.on('message', async message => {
 	}
 
 	if (command.args && !args.length) {
-		let reply = `You didn't provide any arguments, ${message.author}.`;
+		let reply = `You didn't provide any arguments!`;
 
 		if (command.usage) {
 			reply += `\nThe proper usage is \`${prefix}${command.name} ${command.usage}\``;
 		}
-
-		return message.channel.send(reply);
+                const argsEmbed = new Discord.MessageEmbed().setColor('#5d83a2').setAuthor(`${message.author.tag}`, `${message.author.avatarURL()}`).setTitle('You need to provide arguments for this command!').setDescription(reply);
+		return message.channel.send({ embed: argsEmbed });
 	}
 //cooldowns
 	if (!cooldowns.has(command.name)) {
