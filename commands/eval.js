@@ -4,7 +4,7 @@ module.exports = {
   usage: '<codeString>',
 	args: true,
 	execute(message, args, Discord) {
-if (message.author !== "<@671264149745041408>") return;
+if (message.author.id !== "671264149745041408") return;
 message.channel.send(eval(args.join(" ")));
 			},
 };
