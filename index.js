@@ -34,10 +34,6 @@ client.on('message', async message => {
 
 	if (!command) return;
 
-	if (command.guildOnly && message.channel.type !== 'text') {
-		return message.reply('This command doesn\'t work in DMs. Try again in a server.');
-	}
-
 	if (command.args && !args.length) {
 		let reply = `You didn't provide any arguments!`;
 

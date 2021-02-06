@@ -27,7 +27,8 @@ const name = args[0].toLowerCase();
 const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
 
 if (!command) {
-	return message.reply('That\'s not a command!');
+	const notCommandEmbed = new Discord.MessageEmbed().setColor('#5d83a2').setAuthor(`${message.author.tag}`, `${message.author.avatarURL()}`).setTitle('That doesn\'t exist!').setDescription(`That command doesn\'t exist. If you want the full list of commands, type \`${prefix}help\`.`);
+	return message.channel.send({ embed: notCommandEmbed });
 }
 
 data.push(`Name: ${command.name}`);
