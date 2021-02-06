@@ -11,7 +11,8 @@ if (!args.length) {
   data.push('Here\'s a list of all my commands:');
 data.push(commands.map(command => command.name).join(', '));
 data.push(`\nYou can type \`${prefix}help <command-name>\` to get info on a specific command.`);
-return message.author.send(data, { split: true })
+const listEmbed = new Discord.MessageEmbed().setColor('#5d83a2').setAuthor(`${message.author.tag}`, `${message.author.avatarURL()}`).setTitle('Command List').setDescription(data);
+return message.author.send({ embed: listEmbed })
 	.then(() => {
 		if (message.channel.type === 'dm') return;
 	  const helpEmbed = new Discord.MessageEmbed().setColor('#5d83a2').setAuthor(`${message.author.tag}`, `${message.author.avatarURL()}`).setTitle(`I have sent you a DM with my commands!`).setDescription(`\nYou can type \`${prefix}help <command-name>\` to get info on a specific command.`);
