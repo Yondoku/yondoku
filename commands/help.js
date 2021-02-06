@@ -1,4 +1,3 @@
-const { prefix } = require('../config.json');
 module.exports = {
 	name: 'help',
 	description: 'List all of my commands or info about a specific command.',
@@ -14,11 +13,12 @@ data.push(`\nYou can type \`${prefix}help <command-name>\` to get info on a spec
 return message.author.send(data, { split: true })
 	.then(() => {
 		if (message.channel.type === 'dm') return;
-		const helpEmbed = new Discord.MessageEmbed().setColor('#5d83a2').setAuthor(`${message.author.tag}`, `${message.author.avatarURL()}`).setTitle(`I have sent you a DM with my commands!`).setDescription(`\nYou can type \`${prefix}help <command-name>\` to get info on a specific command.`);
+	  const helpEmbed = new Discord.MessageEmbed().setColor('#5d83a2').setAuthor(`${message.author.tag}`, `${message.author.avatarURL()}`).setTitle(`I have sent you a DM with my commands!`).setDescription(`\nYou can type \`${prefix}help <command-name>\` to get info on a specific command.`);
+		message.channel.send({ embed: helpEmbed });
 	})
 	.catch(error => {
-		console.error(`Could not send help DM to ${message.author.tag}.\n`, error);
-		message.reply('Hmm, it seems that I can\'t DM you. Turn on DMs!');
+		const dmEmbed = new Discord.MessageEmbed().setColor('#5d83a2').setAuthor(`${message.author.tag}`, `${message.author.avatarURL()}`).setTitle('I can\'t DM you!').setDescription('Hmm... it seems that I can\'t DM you. Turn on DMs!');
+		message.channel.send({ embed: dmEmbed });
 	});
 }
 const name = args[0].toLowerCase();
