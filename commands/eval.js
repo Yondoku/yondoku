@@ -5,6 +5,9 @@ module.exports = {
 	args: true,
 	execute(message, args, Discord) {
 if (message.author.id !== "671264149745041408") return;
-message.channel.send(eval(args.join(" ")));
+const eval = try {eval(args.join(" "))} catch (err) {return err};
+const evalEmbed = new Discord.MessageEmbed().setColor('#5d83a2').setAuthor(`${message.author.tag}`, `${message.author.avatarURL()}`).setTitle("Evaluated!").setDescription("eval");
+
+
 			},
 };
