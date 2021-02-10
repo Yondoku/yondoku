@@ -5,11 +5,11 @@ module.exports = {
   usage: '[textString]',
   execute(message, args, Discord) {
 if (!args.length) {
-  const messageboardEmbed = new Discord.MessageEmbed().setColor('#5d83a2').setAuthor(`${message.author.tag}`, `${message.author.avatarURL()}`).setTitle('Message board says...').setDescription(fs.readFileSync('messageboard.txt'));
+  const messageboardEmbed = new Discord.MessageEmbed().setColor('#5d83a2').setAuthor(`${message.author.tag}`, `${message.author.avatarURL()}`).setTitle('Message board says...').setDescription(fs.readFileSync('commands/messageboard.txt'));
   return message.channel.send({ embed: messageboardEmbed });
 }
   const messageboardsetEmbed = new Discord.MessageEmbed().setColor('#5d83a2').setAuthor(`${message.author.tag}`, `${message.author.avatarURL()}`).setTitle('Done!').setDescription('Set the message board!');
-fs.writeFileSync('messageboard.txt', args.join(" "));
+fs.writeFileSync('commands/messageboard.txt', args.join(" "));
 message.channel.send({ embed: messageboardsetEmbed });
 			},
 };
