@@ -34,6 +34,11 @@ client.on('message', async message => {
 
 	if (!command) return;
 
+	if (command.guildOnly && message.channel.type === 'dm') {
+		const guildOnlyEmbed = new Discord.MessageEmbed().setColor('#5d83a2').setAuthor(`${message.author.tag}`, `${message.author.avatarURL()}`).setTitle('Wrong place to run this command!').setDescription('This command can only be run in servers.');
+return message.channel.send({ embed: guildOnlyEmbed });
+	}
+
 	if (command.args && !args.length) {
 		let reply = `You didn't provide any arguments!`;
 
