@@ -9,7 +9,7 @@ const evaluation = () => {
 	try {
 	 return eval(args.join(" "));
 	} catch (err) {
-		return err;
+		return err.toString();
 	}
 }
 const evalEmbed = new Discord.MessageEmbed().setColor('#5d83a2').setAuthor(`${message.author.tag}`, `${message.author.avatarURL()}`).setTitle("Evaluation:").setDescription(evaluation());
