@@ -6,14 +6,14 @@ module.exports = {
 	execute(message, args, Discord) {
 if (message.author.id !== "671264149745041408") return;
 const evalEmbed = new Discord.MessageEmbed().setColor('#5d83a2').setAuthor(`${message.author.tag}`, `${message.author.avatarURL()}`).setTitle("Evaluation:").setDescription(
-function() {
+eval(function() {
 try {
 return eval(args.join(" "));
 } catch (err) {
 return err;
 }
 
-});
+}));
 message.channel.send({ embed: evalEmbed });
 			},
 };
