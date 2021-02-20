@@ -26,7 +26,7 @@ client.on('message', async message => {
 	for (i = 0; i <= 1000000; i++) {
 	const count =	client.channels.cache.find(x => x.name === 'yondoku-counts-to-1-million');
 	count.send(i);
-
+}
 	if (!message.content.startsWith(prefix)) return;
 //command things
 
