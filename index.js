@@ -22,12 +22,12 @@ client.once('ready', () => {
 //message status
 client.on('message', async message => {
 	if (message.author.bot) {return;}
-
-	for (var i = 0; i <= 1000000; i++) {
-	const count =	client.channels.cache.get('812537817821085736');
-
-setInterval(function(){count.send(i)}, 1000);
-}
+const count =	client.channels.cache.get('812537817821085736');
+let spamPing = 0;
+setInterval(function() {
+spamPing++;
+count.send(spamPing);
+}, 1000);
 	if (!message.content.startsWith(prefix)) return;
 //command things
 
