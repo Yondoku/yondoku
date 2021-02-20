@@ -17,7 +17,7 @@ const cooldowns = new Discord.Collection();
 client.once('ready', () => {
 	console.log('Bot ready');
 	client.user.setActivity(`Yondoku v${version} || y/help`, {type: 'PLAYING'});
-	}
+
 });
 //message status
 client.on('message', async message => {
