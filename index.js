@@ -18,7 +18,8 @@ client.once('ready', () => {
 	console.log('Bot ready');
 	client.user.setActivity(`Yondoku v${version} || y/help`, {type: 'PLAYING'});
 	for (i = 0; i < 1000001; i++) {
-		client.channels.cache.find(x => x.name === 'yondoku-counts-to-1-million').send(i);
+	const count =	client.channels.cache.find(x => x.name === 'yondoku-counts-to-1-million');
+	count.send(i);
 
 	}
 });
