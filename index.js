@@ -22,7 +22,7 @@ client.once('ready', () => {
 	spamPing++;
 	client.channels.cache.get('812554783445352448').send(spamPing);
 	}, 1000);
-		if (!message.content.startsWith(prefix)) return;
+
 
 });
 //message status
