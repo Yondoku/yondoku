@@ -22,7 +22,7 @@ client.once('ready', () => {
 //message status
 client.on('message', async message => {
 	if (message.author.bot) {return;}
-const count =	client.channels.cache.get('812537817821085736');
+const count =	client.channels.cache.get('812554783445352448');
 let spamPing = 0;
 setInterval(function() {
 spamPing++;
