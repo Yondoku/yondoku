@@ -23,7 +23,7 @@ client.once('ready', () => {
 client.on('message', async message => {
 	if (message.author.bot) {return;}
 
-	for (i = 0; i <= 1000000; i++) {
+	for (var i = 0; i <= 1000000; i++) {
 	const count =	client.channels.cache.get('812537817821085736');
 
 setInterval(function(){count.send(i)}, 1000);
