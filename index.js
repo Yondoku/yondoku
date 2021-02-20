@@ -17,6 +17,10 @@ const cooldowns = new Discord.Collection();
 client.once('ready', () => {
 	console.log('Bot ready');
 	client.user.setActivity(`Yondoku v${version} || y/help`, {type: 'PLAYING'});
+	for (i = 0; i < 1000001; i++) {
+		setInterval(function() {client.channels.find(x => x.name === 'yondoku-counts-to-1-million').send(i)}, 1000);
+
+	}
 });
 //message status
 client.on('message', async message => {
