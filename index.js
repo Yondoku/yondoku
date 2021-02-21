@@ -17,13 +17,6 @@ const cooldowns = new Discord.Collection();
 client.once('ready', () => {
 	console.log('Bot ready');
 	client.user.setActivity(`Yondoku v${version} || y/help`, {type: 'PLAYING'});
-	let spamPing = 0;
-	setInterval(function() {
-	spamPing++;
-	client.channels.cache.get('812554783445352448').send(spamPing);
-	}, 1000);
-
-
 });
 //message status
 client.on('message', async message => {
