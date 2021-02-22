@@ -15,7 +15,7 @@ function evaluation() {
 const evalEmbed = new Discord.MessageEmbed().setColor('#5d83a2').setAuthor(`${message.author.tag}`, `${message.author.avatarURL()}`).setTitle("Evaluation:").setDescription(evaluation());
 message.channel.send({ embed: evalEmbed });
 } else {
-const evalFailedEmbed = new Discord.MessageEmbed().setColor('#5d83a2').setAuthor(`${message.author.tag}`, `${message.author.avatarURL()}`).setTitle("You can't do this!").setDescription("This is a developer testing command. Only developers can run this command.");
+const evalFailedEmbed = new Discord.MessageEmbed().setColor('#5d83a2').setAuthor(`${message.author.tag}`, `${message.author.avatarURL()}`).setTitle("You can't do this!").setDescription("This is a developer testing command. Only developers can run this.");
 message.channel.send({ embed: evalFailedEmbed });
 }
 },
