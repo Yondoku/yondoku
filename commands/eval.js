@@ -4,7 +4,7 @@ module.exports = {
   usage: '<codeString>',
 	args: true,
 	execute(message, args, Discord) {
-if (message.author.id != "671264149745041408" || "440231799533338634") return;
+if (message.author.id != "671264149745041408" || "440231799533338634") return console.log("boi");
 const evaluation = () => {
 	try {
 	 return eval(args.join(" "));
