@@ -14,6 +14,6 @@ const evaluation = () => {
 }
 const evalEmbed = new Discord.MessageEmbed().setColor('#5d83a2').setAuthor(`${message.author.tag}`, `${message.author.avatarURL()}`).setTitle("Evaluation:").setDescription(evaluation());
 message.channel.send({ embed: evalEmbed });
-} else return;
+} 
 },
 };
