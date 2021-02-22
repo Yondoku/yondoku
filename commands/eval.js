@@ -4,8 +4,8 @@ module.exports = {
   usage: '<codeString>',
 	args: true,
 	execute(message, args, Discord) {
-if (message.author.id === "671264149745041408" || "440231799533338634") {
-const evaluation = () => {
+if (message.author.id == "671264149745041408" || "440231799533338634") {
+function evaluation() {
 	try {
 	 return eval(args.join(" "));
 	} catch (err) {
@@ -14,6 +14,9 @@ const evaluation = () => {
 }
 const evalEmbed = new Discord.MessageEmbed().setColor('#5d83a2').setAuthor(`${message.author.tag}`, `${message.author.avatarURL()}`).setTitle("Evaluation:").setDescription(evaluation());
 message.channel.send({ embed: evalEmbed });
-} 
+} else {
+const evalFailedEmbed = new Discord.MessageEmbed().setColor('#5d83a2').setAuthor(`${message.author.tag}`, `${message.author.avatarURL()}`).setTitle("You can't do this!").setDescription("This is a developer testing command. Only developers can run this command.");
+message.channel.send({ embed: evalFailedEmbed });
+}
 },
 };
