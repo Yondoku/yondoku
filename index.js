@@ -67,7 +67,7 @@ return message.channel.send({ embed: guildOnlyEmbed });
 	setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
 
 	try {
-		command.execute(message, args, Discord);
+		command.execute(message, args, Discord, client);
 	} catch (error) {
 		console.error(error);
 		//oofus error
