@@ -3,7 +3,7 @@ module.exports = {
 	description: 'Runs code.',
   usage: '<codeString>',
 	args: true,
-	execute(message, args, Discord) {
+	execute(message, args, Discord, client) {
 if (message.author.id == "671264149745041408" || message.author.id == "440231799533338634") {
 function evaluation() {
 	try {
