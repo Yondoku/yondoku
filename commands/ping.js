@@ -2,6 +2,7 @@ module.exports = {
 	name: 'ping',
 	description: 'Ping',
 	execute(message, args, Discord, client) {
- message.channel.send(`🏓Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms`);
+const pingEmbed = new Discord.MessageEmbed().setColor('#5d83a2').setAuthor(`${message.author.tag}`, `${message.author.avatarURL()}`).setTitle("Pong!").setDescription(`Latency: ${Date.now() - message.createdTimestamp}ms. API Latency: ${Math.round(client.ws.ping)}ms`);
+message.channel.send({ embed: pingEmbed });
 			},
 };
