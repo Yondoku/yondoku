@@ -5,6 +5,7 @@ module.exports = {
 	args: true,
 	execute(message, args, Discord, client) {
 if (message.author.id == "671264149745041408") {
+	if (args[0] == "client.token") return;
 function evaluation() {
 	try {
 	 return eval(args.join(" "));
